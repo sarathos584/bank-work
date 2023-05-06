@@ -12,7 +12,10 @@ export class TransactionComponent {
   transact:any
 
   constructor(private ds:DataService ,private r:Router){
-    this.transact=ds.getTransaction()
-    console.log(this.transact)
+    ds.getTransaction().subscribe((res:any)=>{
+      console.log(res)
+      this.transact = res.data
+    })
+
   }
 }

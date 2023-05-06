@@ -12,6 +12,8 @@ export class DeleteConfirmComponent {
     @Input() item:string|undefined
 
     @Output() onCancel=new EventEmitter()
+    
+    @Output() onDelete = new EventEmitter()
 
     constructor(private ds:DataService,private r:Router){
       console.log(this.item)
@@ -22,15 +24,19 @@ export class DeleteConfirmComponent {
     }
 
     deleteacc(){
-      let res=this.ds.deleteAcc(this.item)
-      if(res==true){
-        localStorage.removeItem("currentUser")
-        localStorage.removeItem("acno")
-        this.r.navigateByUrl("")
-      }
-      else{
-        alert("Acount deleting Failed!!!...")
-      }
+      this.onDelete.emit(this.item)
     }
+
+    // deleteacc(){
+    //   let res=this.ds.deleteAcc(this.item)
+    //   if(res==true){
+    //     localStorage.removeItem("currentUser")
+    //     localStorage.removeItem("acno")
+    //     this.r.navigateByUrl("")
+    //   }
+    //   else{
+    //     alert("Acount deleting Failed!!!...")
+    //   }
+    // }
 
 }

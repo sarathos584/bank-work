@@ -12,7 +12,7 @@ import { TransactionComponent } from './transaction/transaction.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DeleteConfirmComponent } from './delete-confirm/delete-confirm.component';
 import { MydirectivesDirective } from './directives/mydirectives.directive'
-
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,8 @@ import { MydirectivesDirective } from './directives/mydirectives.directive'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

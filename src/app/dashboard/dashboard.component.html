@@ -1,5 +1,5 @@
 <div class="row">
-  <h1 class="d-flex justify-content-around text-white">Welcome {{ cuser }}</h1>
+  <h1 class="d-flex justify-content-around text-white">Welcome {{ cuser|uppercase }}</h1>
   <a routerLink="/trans" class="text-info d-flex justify-content-around"
     >View Transaction History</a
   >
@@ -7,6 +7,7 @@
   <app-delete-confirm
     (onCancel)="canceldelete()"
     [item]="acno"
+    (onDelete)="deleteaccount($event)"
   ></app-delete-confirm>
   <!-- <app-animation-demo></app-animation-demo> -->
   <div class="col-6">
